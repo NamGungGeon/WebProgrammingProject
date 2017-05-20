@@ -1,0 +1,39 @@
+﻿
+.menu{
+    width: 500px;
+    height: 1500px;
+    display: inline-block;
+    background-color:limegreen;
+    padding: 60px;
+}
+.content{
+    height: 1500px;
+    display: inline;
+}
+
+
+.profile{
+    margin-left: 50px;
+}
+.profile tr td .profileImg{
+    width: 350px;
+    height: 350px;
+	border-radius: 50%
+}
+.profile tr td .profileName{
+    margin-top: 30px;
+    font-size: 23px;
+}
+
+.nav{
+    margin-top: 100px;
+    margin-left: 130px;
+}
+.nav tr td h2{
+    padding: 30px;
+}
+
+.nav tr td :hover{
+    background-color: lime;
+    cursor: pointer;
+}
