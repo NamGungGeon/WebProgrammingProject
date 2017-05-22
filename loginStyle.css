@@ -1,5 +1,10 @@
-﻿body{
-    padding-top: 200px;
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    color: white;
+    font-weight: bold;
 }
 
 h1{
@@ -16,6 +21,8 @@ h1{
 .inputForm input{
     width: 150px;
     display: inline;
+    color: black;
+    font-weight: normal;
 }
 
 .inputForm #loginBt{
@@ -24,4 +31,27 @@ h1{
 }
 ul{
     list-style: none;
+}
+
+#backgroundVideo{
+    width: 100%;
+}
+
+#loginSector{
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.siteInfo{
+    background-color: black;
+    font-size: 10px;
+    text-align: center;
+    padding-top: 15px;
+    color: white;
+    padding-bottom: 15px;
+    position:absolute;
+    width: 100%;
+    top: calc(100%);
 }

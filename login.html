@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Login</title>
 	<meta charset="utf-8" />
     <!-- BootStrap Import-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -13,23 +13,28 @@
     <link rel="stylesheet" href="loginStyle.css" />
 </head>
 <body>
-    <h1 class="text-center">
-       다이어리에 접근하기 위해 로그인하세요 
-    </h1>
-    <div class="text-center">
+        <video id="backgroundVideo"autoplay="autoplay" loop="loop" poster="https://cdn1.evernote.com/evernote.com/img/homepage/homepage-hero-video-desktop-still@2x.jpg">
+            <source class="webm" type="video/webm" src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video@2x.webm">
+            <source class="mp4" type="video/mp4" src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video@2x.mp4">
+        </video>
+
+    <div class="text-center" id="loginSector">
+        <h1 class="text-center">
+            다이어리에 접근하기 위해 로그인하세요
+        </h1>
         <form>
             <fieldset>
                 <ul>
                     <li>
                         <div class="inputForm">
                             <label for="id" style="padding-right: 8px;">ID</label>
-                            <input type="text" id="id"/>
+                            <input type="text" id="id" placeholder="아이디"/>
                         </div>
                     </li>
                     <li>
                         <div class="inputForm">
                             <label for="pw">PW</label>
-                            <input type="password" id="pw" />
+                            <input type="password" id="pw" placeholder="비밀번호"/>
                         </div>
                         <div class="inputForm">
                             <input type="submit" value="로그인" id="loginBt" class="btn btn-default"/>
@@ -38,6 +43,12 @@
                 </ul>
             </fieldset>
         </form>
+    </div>
+    <div class="siteInfo">
+        사이트 정보<br /><br />
+        201611259 컴퓨터공학과 남궁건<br /><br />
+        웹 프로그래밍 프로젝트 과제<br /><br />
+        ^_____^
     </div>
 </body>
 </html>
