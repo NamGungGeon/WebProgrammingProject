@@ -1,4 +1,6 @@
-﻿
+﻿body{
+    font-family: 'Open Sans';
+}
 .menu{
     width: 330px;
     height: 1000px;
@@ -52,7 +54,9 @@ form input{
     font-weight: bold;
    
 }
-
+a{
+    color: white;
+}
 .nav{
     margin-top: 80px;
     text-align: right;
@@ -66,6 +70,7 @@ form input{
     padding-left: 80px;
     font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .nav tr td :hover{
@@ -85,4 +90,19 @@ form input{
     font-size: 23px;
     margin-left: 750px;
     margin-top: 30px;
+}
+
+.link{
+    position: fixed;
+    top: 40%;
+    right: 7%;
+    float: right;
+    display:inline-block;
+    width: 100px;
+    padding: 10px;
+}
+.link img{
+    width: 65px;
+    height: 60px;
+    margin: 10px;
 }

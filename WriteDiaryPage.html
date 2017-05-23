@@ -40,17 +40,17 @@
                 <tbody>
                     <tr>
                         <td class="writeDiaryBt">
-                            <h2>Write Diary</h2>
+                            <a href="WriteDiaryPage.html"><h2>Write Diary</h2></a>
                         </td>
                     </tr>
                     <tr>
                         <td class="findBt">
-                            <h2>Find Diary</h2>
+                            <a href="FindDiaryPage.html"><h2>Find Diary</h2></a>
                         </td>
                     </tr>
                     <tr>
                         <td class="viewBt">
-                            <h2>View Diary</h2>
+                            <a href="VIewDiaryPage.html"><h2>View Diary</h2></a>
                         </td>
                     </tr>
                 </tbody>
@@ -65,9 +65,10 @@
                 <hr style="margin-bottom: 70px;"/>
             </div>
             <div class="content" style="padding: 0px; margin: 0px;">
-                <textarea name="editor" id="editor" rows="10" cols="80">
-                    This is my textarea to be replaced with CKEditor.
-                </textarea>
+                <textarea name="title" id="title" rows="1" cols="116" placeholder="title"></textarea>
+                <br /><br />
+                <textarea name="editor" id="editor" rows="10" cols="80" placeholder="text"></textarea>
+                <br />
                 <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
@@ -75,12 +76,18 @@
                 CKEDITOR.config.width= 850;
                 CKEDITOR.config.height = 350;
                 </script>
+                <textarea name="tag" id="tag" rows="1" cols="116" placeholder="tag (ex: #tag_1, #tag_2)"></textarea>
                 <button type="submit" class="btn btn-success uploadBt">
                     Upload
                 </button>
             </div>
             
         </div>
+    </div>
+    <div class="link">
+        <a href="https://www.facebook.com"><img src="facebook.png" /></a><br />
+        <a href="https://www.instagram.com"><img src="insta.jpg" /></a><br />
+        <a href="https://twitter.com/"><img src="twitter.jpg" /></a><br />
     </div>
 
 </body>
