@@ -16,6 +16,27 @@
     <link rel="stylesheet" href="myStyle.css" />
     <!--Text Editor-->
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-messaging.js"></script>
+    <script>
+        //Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyANOSqpm0y44IrSA3muyX4CoppSQEbRhs4",
+          authDomain: "webprogrammingproject-c1fe1.firebaseapp.com",
+          databaseURL: "https://webprogrammingproject-c1fe1.firebaseio.com",
+          projectId: "webprogrammingproject-c1fe1",
+          storageBucket: "webprogrammingproject-c1fe1.appspot.com",
+          messagingSenderId: "831340076699"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+
+    </script>
 </head>
 <body>
     <div class="menu">
@@ -75,9 +96,32 @@
                 CKEDITOR.replace('editor');
                 CKEDITOR.config.width= 850;
                 CKEDITOR.config.height = 350;
+
+
+                function writeData(name, title, text, tag) {
+                    database.ref('users/' + name).push({
+                        username: name,
+                        userTitle: title,
+                        userText: text,
+                        userTag: tag
+                    })
+                };
+
+                var myName = "Geon";
+
+                function clickedSubmitBt() {
+                    var title = $("#title").val();
+                    var text = CKEDITOR.instances.editor.getData();
+                    var tag = $("#tag").val();
+
+                    writeData(myName, title, text, tag);
+                    alert("Successfully save");
+                    this.location.reload(false);
+
+                }
                 </script>
                 <textarea name="tag" id="tag" rows="1" cols="116" placeholder="tag (ex: #tag_1, #tag_2)"></textarea>
-                <button type="submit" class="btn btn-success uploadBt">
+                <button type="submit" class="btn btn-success uploadBt" id="submit" onclick="clickedSubmitBt()">
                     Upload
                 </button>
             </div>
@@ -89,6 +133,5 @@
         <a href="https://www.instagram.com"><img src="insta.jpg" /></a><br />
         <a href="https://twitter.com/"><img src="twitter.jpg" /></a><br />
     </div>
-
 </body>
 </html>

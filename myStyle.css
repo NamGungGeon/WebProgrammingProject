@@ -1,108 +1,338 @@
-﻿body{
-    font-family: 'Open Sans';
-}
-.menu{
-    width: 330px;
-    height: 1000px;
-    display: inline-block;
-    background-color:#d9534f;
-    padding: 30px;
-    float: left;
-}
-.content{
-    width: 600px;
-    display: inline-block;
-    padding: 50px;
-}
-
-
-
-hr{
-    border-color: orangered;
-    width: 850px;
-}
-
-form label{
-    font-size: 30px;
-    margin-bottom: 15px;
+﻿
+body{
     font-family: 'Open Sans';
 }
 
-form input{
-    margin-bottom: 50px;
-}
 
-.searchResult{
-    font-size: 30px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-family: 'Open Sans';
-}
-.profile{
-    margin-left: 40px;
-}
-.profile tr td .profileImg{
-    width: 200px;
-    height: 200px;
-	border-radius: 50%;
-    margin-bottom: 30px;
-}
-.profile tr td .profileName{
-    margin-top: 15px;
-    font-size: 23px;
-    font-family: 'Open Sans';
-    font-weight: bold;
+@media (max-width: 950px){
+    
+    .menu{
+        width: 100%;
+        height: 450px;
+        background-color:#d9534f;
+        float: left;
+        padding-top: 20px;
+    }
+    .content{
+        width: 100%;
+        padding: 50px;
+    }
+
+    
+    hr{
+        border-color: orangered;
+        width: 850px;
+    }
+
+    form label{
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: 'Open Sans';
+    }
+
+    form input{
+        margin-bottom: 50px;
+    }
+
+    .searchResult{
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-family: 'Open Sans';
+    }
+    .profile{
+        position: relative;
+        left: 35%;
+    }
+    .profile tr td .profileImg{
+        width: 200px;
+        height: 200px;
+	    border-radius: 50%;
+        margin-bottom: 30px;
+    }
+    .profile tr td .profileName{
+        text-align: center;
+        margin-top: 15px;
+        font-size: 23px;
+        font-family: 'Open Sans';
+        font-weight: bold;
    
-}
-a{
-    color: white;
-}
-.nav{
-    margin-top: 80px;
-    text-align: right;
-    font-family: 'Open Sans';
-    color: white;
-    font-size: 20px;
-    margin-left: 50px;
-}
-.nav tr td h2{
-    padding: 20px;
-    padding-left: 80px;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
+    }
+    a{
+        color: white;
+    }
+    .nav{
+        margin-top: 30px;
+        text-align: center;
+        font-family: 'Open Sans';
+        color: white;
+        font-size: 20px;
+        position: relative;
+        left: 20%;
+    }
+    .nav tr td h2{
+        padding: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .nav tr{
+        display: inline-block;
+    }
+    .nav tr td :hover{
+        background-color: white;
+        cursor: pointer;
+        color: black;
+    }
+
+    .contentInfo{
+        color: #ff6a00;
+        font-size: 50px;
+        font-family: 'Ubuntu';
+        margin-top: 470px;
+    }
+
+
+    .uploadBt{
+        font-size: 23px;
+        margin-left: 750px;
+        margin-top: 30px;
+    }
+
+    .link{
+        position: fixed;
+        top: 40%;
+        right: 7%;
+        float: right;
+        display: none;
+        width: 100px;
+        padding: 10px;
+    }
+    .link img{
+        width: 65px;
+        height: 60px;
+        margin: 10px;
+    }
 }
 
-.nav tr td :hover{
-    background-color: white;
-    cursor: pointer;
-    color: black;
+@media(min-width: 950px){
+    .menu{
+        width: 330px;
+        height: 1000px;
+        display: inline-block;
+        background-color:#d9534f;
+        padding: 30px;
+        float: left;
+    }
+    .content{
+        width: 600px;
+        display: inline-block;
+        padding: 50px;
+    }
+
+
+
+    hr{
+        border-color: orangered;
+        width: 850px;
+    }
+
+    form label{
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: 'Open Sans';
+    }
+
+    form input{
+        margin-bottom: 50px;
+    }
+
+    .searchResult{
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-family: 'Open Sans';
+    }
+    .profile{
+        margin-left: 40px;
+    }
+    .profile tr td .profileImg{
+        width: 200px;
+        height: 200px;
+	    border-radius: 50%;
+        margin-bottom: 30px;
+    }
+    .profile tr td .profileName{
+        margin-top: 15px;
+        font-size: 23px;
+        font-family: 'Open Sans';
+        font-weight: bold;
+   
+    }
+    a{
+        color: white;
+    }
+    .nav{
+        margin-top: 80px;
+        text-align: right;
+        font-family: 'Open Sans';
+        color: white;
+        font-size: 20px;
+        margin-left: 50px;
+    }
+    .nav tr td h2{
+        padding: 20px;
+        padding-left: 80px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav tr td :hover{
+        background-color: white;
+        cursor: pointer;
+        color: black;
+    }
+
+    .contentInfo{
+        color: #ff6a00;
+        font-size: 50px;
+        font-family: 'Ubuntu';
+        margin-top: 20px;
+    }
+
+
+    .uploadBt{
+        font-size: 23px;
+        margin-left: 750px;
+        margin-top: 30px;
+    }
+
+    .link{
+        position: fixed;
+        top: 40%;
+        right: 7%;
+        float: right;
+        display:none;
+        width: 100px;
+        padding: 10px;
+    }
+    .link img{
+        width: 65px;
+        height: 60px;
+        margin: 10px;
+    }
+
 }
 
-.contentInfo{
-    color: #ff6a00;
-    font-size: 50px;
-    font-family: 'Ubuntu';
-}
+
+@media(min-width: 1470px){
+    .menu{
+        width: 330px;
+        height: 1000px;
+        display: inline-block;
+        background-color:#d9534f;
+        padding: 30px;
+        float: left;
+    }
+    .content{
+        width: 600px;
+        display: inline-block;
+        padding: 50px;
+    }
 
 
-.uploadBt{
-    font-size: 23px;
-    margin-left: 750px;
-    margin-top: 30px;
-}
 
-.link{
-    position: fixed;
-    top: 40%;
-    right: 7%;
-    float: right;
-    display:inline-block;
-    width: 100px;
-    padding: 10px;
-}
-.link img{
-    width: 65px;
-    height: 60px;
-    margin: 10px;
+    hr{
+        border-color: orangered;
+        width: 850px;
+    }
+
+    form label{
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: 'Open Sans';
+    }
+
+    form input{
+        margin-bottom: 50px;
+    }
+
+    .searchResult{
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-family: 'Open Sans';
+    }
+    .profile{
+        margin-left: 40px;
+    }
+    .profile tr td .profileImg{
+        width: 200px;
+        height: 200px;
+	    border-radius: 50%;
+        margin-bottom: 30px;
+    }
+    .profile tr td .profileName{
+        margin-top: 15px;
+        font-size: 23px;
+        font-family: 'Open Sans';
+        font-weight: bold;
+   
+    }
+    a{
+        color: white;
+    }
+    .nav{
+        margin-top: 80px;
+        text-align: right;
+        font-family: 'Open Sans';
+        color: white;
+        font-size: 20px;
+        margin-left: 50px;
+    }
+    .nav tr td h2{
+        padding: 20px;
+        padding-left: 80px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav tr td :hover{
+        background-color: white;
+        cursor: pointer;
+        color: black;
+    }
+
+    .contentInfo{
+        color: #ff6a00;
+        font-size: 50px;
+        font-family: 'Ubuntu';
+        margin-top: 20px;
+    }
+
+
+    .uploadBt{
+        font-size: 23px;
+        margin-left: 750px;
+        margin-top: 30px;
+    }
+
+    .link{
+        position: fixed;
+        top: 40%;
+        right: 7%;
+        float: right;
+        display:inline-block;
+        width: 100px;
+        padding: 10px;
+    }
+    .link img{
+        width: 65px;
+        height: 60px;
+        margin: 10px;
+    }
+
 }
