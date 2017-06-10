@@ -15,7 +15,27 @@
     <!--My CSS-->
     <link rel="stylesheet" href="myStyle.css" />
     <!--Text Editor-->
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script src="ckeditor.js"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-messaging.js"></script>
+    <script>
+        //Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyANOSqpm0y44IrSA3muyX4CoppSQEbRhs4",
+          authDomain: "webprogrammingproject-c1fe1.firebaseapp.com",
+          databaseURL: "https://webprogrammingproject-c1fe1.firebaseio.com",
+          projectId: "webprogrammingproject-c1fe1",
+          storageBucket: "webprogrammingproject-c1fe1.appspot.com",
+          messagingSenderId: "831340076699"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+    </script>
 </head>
 <body>
     <div class="menu">
@@ -68,15 +88,55 @@
                 <form id="search">
                     <label style="padding-right: 15px">Input tag of what you want to find</label>
                     <br/>
-                    <input type="text" id="tagSearch" />
+                    <input type="text" id="tagSearch" placeholder="ex: #tag" style="width: 350px;"/>
                 </form>
+                <button class="btn" onclick="search()">
+                    search
+                </button>
             </div>
             <div class="searchResult">
                 Search Result
             </div>
+            <div id="searchResult">
+                
+            </div>
         </div>
     </div>
+    <script>
+        function search() {
+            $.ajax({
+                url: config.databaseURL + "/users/Geon.json",
+                method: "GET",
+                success: function (note) {
+                    let input=$("#tagSearch").val();
+                    let text="";
+                    let arr=new Array();
 
+                    for (let l in note) {
+                        arr.push(l);
+                        /*
+                        alert(l);
+                        text+="-------------------------<br/>";
+                        text+="Title<br/>"+note[l].userTitle+"<br/>";
+                        text+="Text"+note[l].userText+"<br/>";
+                        text+="Tag<br/>"+note[l].userTag+"<br/>";
+                        */
+                    }
+                    for(let l=arr.length-1; l>=0; l--){
+
+                        if(note[arr[l]].userTag.indexOf(input) >-1){
+                            text+="-------------------------<br/>";
+                            text+="Title<br/>"+note[arr[l]].userTitle+"<br/>";
+                            text+="Text"+note[arr[l]].userText+"<br/>";
+                            text+="Tag<br/>"+note[arr[l]].userTag+"<br/>";
+                        }
+                    }
+                    text+="-------------------------<br/>";
+                    $("#searchResult").html(text);
+                }
+            });
+        }
+    </script>
     <div class="link">
         <a href="https://www.facebook.com"><img src="facebook.png" /></a><br />
         <a href="https://www.instagram.com"><img src="insta.jpg" /></a><br />

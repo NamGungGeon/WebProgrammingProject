@@ -15,7 +15,7 @@
     <!--My CSS-->
     <link rel="stylesheet" href="myStyle.css" />
     <!--Text Editor-->
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script src="ckeditor.js"></script>
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
@@ -90,8 +90,7 @@
                 View Diary!
                 <hr style="margin-bottom: 70px;"/>
             </div>
-            <div class="content" style="padding: 0px; margin: 0px;">
-                View
+            <div class="viewDiary" style="padding: 0px; margin: 0px;">
             </div>
         </div>
     </div>
@@ -101,5 +100,41 @@
         <a href="https://www.instagram.com"><img src="insta.jpg" /></a><br />
         <a href="https://twitter.com/"><img src="twitter.jpg" /></a><br />
     </div>
+    <script>
+        
+        function loadNoteDB() {
+            $.ajax({
+                url: config.databaseURL + "/users/Geon.json",
+                method: "GET",
+                success: function (note) {
+                    let text="";
+                    let arr=new Array();
+
+                    for (let l in note) {
+                        arr.push(l);
+                        /*
+                        alert(l);
+                        text+="-------------------------<br/>";
+                        text+="Title<br/>"+note[l].userTitle+"<br/>";
+                        text+="Text"+note[l].userText+"<br/>";
+                        text+="Tag<br/>"+note[l].userTag+"<br/>";
+                        */
+                    }
+                    for(let l=arr.length-1; l>=0; l--){
+
+                        text+="-------------------------<br/>";
+                        text+="Title<br/>"+note[arr[l]].userTitle+"<br/>";
+                        text+="Text"+note[arr[l]].userText+"<br/>";
+                        text+="Tag<br/>"+note[arr[l]].userTag+"<br/>";
+                    }
+                    text+="-------------------------<br/>";
+                    $(".viewDiary").html(text);
+                }
+            });
+        }
+        $(document).ready(function(){
+            loadNoteDB();
+        });
+    </script>
 </body>
 </html>

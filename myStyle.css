@@ -1,11 +1,20 @@
 ﻿
-body{
+body, html{
     font-family: 'Open Sans';
+    height: 100%;
 }
 
 
+#title, #tag{
+    width: 851px;
+}
+
 @media (max-width: 950px){
     
+    body, html{
+        width: 100%;
+    }
+
     .menu{
         width: 100%;
         height: 450px;
@@ -119,7 +128,7 @@ body{
 @media(min-width: 950px){
     .menu{
         width: 330px;
-        height: 1000px;
+        height: 200%;
         display: inline-block;
         background-color:#d9534f;
         padding: 30px;
@@ -223,14 +232,13 @@ body{
         height: 60px;
         margin: 10px;
     }
-
 }
 
 
 @media(min-width: 1470px){
     .menu{
         width: 330px;
-        height: 1000px;
+        height: 200%;
         display: inline-block;
         background-color:#d9534f;
         padding: 30px;
@@ -317,7 +325,7 @@ body{
     .uploadBt{
         font-size: 23px;
         margin-left: 750px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .link{
@@ -335,4 +343,16 @@ body{
         margin: 10px;
     }
 
+}
+
+#attachFile label{
+    font-size: 14px;
+}
+
+#attachFile{
+    margin-top: 20px;
+}
+
+#attachFile input{
+    font-size: 14px;
 }

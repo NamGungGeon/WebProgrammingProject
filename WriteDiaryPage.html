@@ -15,7 +15,7 @@
     <!--My CSS-->
     <link rel="stylesheet" href="myStyle.css" />
     <!--Text Editor-->
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script src="ckeditor.js"></script>
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
@@ -86,41 +86,50 @@
                 <hr style="margin-bottom: 70px;"/>
             </div>
             <div class="content" style="padding: 0px; margin: 0px;">
-                <textarea name="title" id="title" rows="1" cols="116" placeholder="title"></textarea>
+                <input type="text" placeholder="제목" id="title"/>
                 <br /><br />
                 <textarea name="editor" id="editor" rows="10" cols="80" placeholder="text"></textarea>
                 <br />
                 <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace('editor');
-                CKEDITOR.config.width= 850;
-                CKEDITOR.config.height = 350;
+                    // Replace the <textarea id="editor1"> with a CKEditor
+                    // instance, using default configuration.
+                    CKEDITOR.replace('editor');
+                    CKEDITOR.config.width= 850;
+                    CKEDITOR.config.height = 350;
 
 
-                function writeData(name, title, text, tag) {
-                    database.ref('users/' + name).push({
-                        username: name,
-                        userTitle: title,
-                        userText: text,
-                        userTag: tag
-                    })
-                };
+                    function writeData(name, title, text, tag) {
+                        database.ref('users/' + name).push({
+                            username: name,
+                            userTitle: title,
+                            userText: text,
+                            userTag: tag
+                        })
+                    };
 
-                var myName = "Geon";
+                    var myName = "Geon";
 
-                function clickedSubmitBt() {
-                    var title = $("#title").val();
-                    var text = CKEDITOR.instances.editor.getData();
-                    var tag = $("#tag").val();
+                    function clickedSubmitBt() {
+                        var title = $("#title").val();
+                        var text = CKEDITOR.instances.editor.getData();
+                        var tag = $("#tag").val();
 
-                    writeData(myName, title, text, tag);
-                    alert("Successfully save");
-                    this.location.reload(false);
+                        writeData(myName, title, text, tag);
+                        alert("Successfully save");
+                        this.location.reload(false);
 
-                }
+                    }
                 </script>
-                <textarea name="tag" id="tag" rows="1" cols="116" placeholder="tag (ex: #tag_1, #tag_2)"></textarea>
+
+                <input type="text" placeholder="tag (ex: #tag_1, #tag_2)" id="tag" />
+                <br />
+                <form id="attachFile">
+                    <label>
+                        파일 첨부<input type="file" />
+                    </label>
+
+                </form>
+                
                 <button type="submit" class="btn btn-success uploadBt" id="submit" onclick="clickedSubmitBt()">
                     Upload
                 </button>
