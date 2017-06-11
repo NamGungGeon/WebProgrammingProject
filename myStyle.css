@@ -4,9 +4,31 @@ body, html{
     height: 100%;
 }
 
+.viewResult{
+    background-color: rgba(255,83,13,0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 700px;
+}
+.viewResult h3{
+    color: rgb(255, 100, 41);
+}
 
 #title, #tag{
     width: 851px;
+}
+
+.deleteBtn{
+    margin-top: 30px;
+    margin-left: 520px;
+    font-size: 25px;
+    width: 98.75px;
+}
+
+.updateBtn{
+    margin-top: 30px;
+    margin-left: 520px;
+    font-size: 25px;
 }
 
 @media (max-width: 950px){
@@ -128,7 +150,7 @@ body, html{
 @media(min-width: 950px){
     .menu{
         width: 330px;
-        height: 200%;
+        height: 500%;
         display: inline-block;
         background-color:#d9534f;
         padding: 30px;
@@ -238,7 +260,7 @@ body, html{
 @media(min-width: 1470px){
     .menu{
         width: 330px;
-        height: 200%;
+        height: 500%;
         display: inline-block;
         background-color:#d9534f;
         padding: 30px;

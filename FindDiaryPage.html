@@ -125,13 +125,15 @@
                     for(let l=arr.length-1; l>=0; l--){
 
                         if(note[arr[l]].userTag.indexOf(input) >-1){
-                            text+="-------------------------<br/>";
-                            text+="Title<br/>"+note[arr[l]].userTitle+"<br/>";
-                            text+="Text"+note[arr[l]].userText+"<br/>";
-                            text+="Tag<br/>"+note[arr[l]].userTag+"<br/>";
+                            text+='<div class="viewResult">';
+                            text+="<h3>Title</h3><br/>"+note[arr[l]].userTitle+"<br/>";
+                            text+="<h3>Text</h3>"+note[arr[l]].userText;
+                            text+="<h3>Tag</h3><br/>"+note[arr[l]].userTag+"<br/>";
+                            text+='<button class="deleteBtn">Delete</button>';
+                            text+='<button class="updateBtn">update</button>';
+                            text+="</div>";
                         }
                     }
-                    text+="-------------------------<br/>";
                     $("#searchResult").html(text);
                 }
             });

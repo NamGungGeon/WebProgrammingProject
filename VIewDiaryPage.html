@@ -101,7 +101,12 @@
         <a href="https://twitter.com/"><img src="twitter.jpg" /></a><br />
     </div>
     <script>
-        
+        function clickedDeleteBt(key){
+            let v=database.ref("users/Geon/"+key);
+            v.remove();
+            alert("Success Delete!");
+            //window.location.reload(false);
+        }
         function loadNoteDB() {
             $.ajax({
                 url: config.databaseURL + "/users/Geon.json",
@@ -109,6 +114,7 @@
                 success: function (note) {
                     let text="";
                     let arr=new Array();
+
 
                     for (let l in note) {
                         arr.push(l);
@@ -121,13 +127,18 @@
                         */
                     }
                     for(let l=arr.length-1; l>=0; l--){
+                        text+='<div class="viewResult">';
+                        text+="<h3>Title</h3><br/>"+note[arr[l]].userTitle+"<br/>";
+                        text+="<h3>Text</h3>"+note[arr[l]].userText;
+                        text+="<h3>Tag</h3><br/>"+note[arr[l]].userTag+"<br/>";
+                        text+='<button class="deleteBtn deleteBtn_'+l;
+                        text+='">Delete</button>';
+                        text+='<button class="updateBtn">update</button>';
+                        text+="</div>";
 
-                        text+="-------------------------<br/>";
-                        text+="Title<br/>"+note[arr[l]].userTitle+"<br/>";
-                        text+="Text"+note[arr[l]].userText+"<br/>";
-                        text+="Tag<br/>"+note[arr[l]].userTag+"<br/>";
+                        let keyValue=arr[l];
+                        $('.deleteBtn_'+keyValue).attr('onclick','clickedDeleteBt('+keyValue+')');
                     }
-                    text+="-------------------------<br/>";
                     $(".viewDiary").html(text);
                 }
             });
